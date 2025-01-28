@@ -24,22 +24,18 @@ document.addEventListener('DOMContentLoaded', function() {
             messages.push('Password must be at least 8 characters long');
         }
         
-        if(isValid) {
-            console.log('qwdqwdqwdqwd');
-            
+        if(isValid) {            
             feedbackDiv.style.display = 'block';
             feedbackDiv.textContent = 'Registration successful!';
             feedbackDiv.style.color = '#28a745';
-            console.log('Form submitted successfully');
         }else {
             feedbackDiv.style.display = 'block';
-            messages.forEach((message)=> {
-                feedbackDiv.innerHTML += `<p>${message}</p> <br>`;
-                feedbackDiv.style.color = '#dc3545'
-            })
+            const message = messages.join('<br>');
+            feedbackDiv.innerHTML += message;
+            feedbackDiv.style.color = '#dc3545'
 
         }
-        
+
         isValid = true;
 
 
