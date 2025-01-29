@@ -8,7 +8,7 @@ async function fetchUserData() {
     try {
         const response = await fetch(apiUrl);
         if(!response.ok) {
-            throw new Error('Failed to fetch data');
+            throw new Error('Failed to load user data');
         }
         const users = await response.json();
         dataContainer.innerHTML = '';
@@ -20,6 +20,6 @@ async function fetchUserData() {
         });
         dataContainer.appendChild(userList);
     } catch (error) {
-       dataContainer.textContent = 'Failed to fetch data';
+       dataContainer.textContent = 'Failed to load user data';
     }
 }
