@@ -11,7 +11,7 @@ async function fetchUserData() {
             throw new Error('Failed to fetch data');
         }
         const users = await response.json();
-        dataContainer.innerHtml = '';
+        dataContainer.innerHTML = '';
         const userList = document.createElement('ul');
         users.forEach((user) => {
             const listItem = document.createElement('li');
